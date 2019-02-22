@@ -6,21 +6,28 @@ puts 'Delete previous Seeds Done'
 
 puts 'Seed Ingredients'
 
-Ingredient.create!(name: "lemon")
-Ingredient.create!(name: "ice")
-Ingredient.create!(name: "mint leaves")
+Ingredient.create!(name: "Whisky")
+Ingredient.create!(name: "Suger")
+Ingredient.create!(name: "Orange")
+Ingredient.create!(name: "Angostura")
+Ingredient.create!(name: "Campari")
+Ingredient.create!(name: "Vermuth Red")
+Ingredient.create!(name: "Vodka")
+Ingredient.create!(name: "Vermuth White")
 
 puts 'Seed Ingredients Done'
 
 puts 'Seed Cocktails'
 
-cocktail_1_desc = "Lorem ipsum dolor sit amet,consectetur adipisicing elit.laud\
-antiumsunt omnis dolores nisi quisquam vel nulla a."
+cocktail_desc = "The Old Fashioned is a cocktail made by muddling sugar with \
+bitters, then adding alcohol, originally whiskey but now sometimes brandy and \
+finally a twist of citrus rind. It is traditionally served in a short, round, tumbler-like glass."
 
-cocktail_1_img = 'https://ls.imgix.net/recipes/thumbnails/Woodford-Reserve-Old-RESIZED.png?w=620&h=310&auto=compress,format&fit=crop'
+url = "https://duijuz32qudrm.cloudfront.net/None/None/OLD%20FASHIONED/recipeImage/Old-Fashioned-1024x683.jpg"
 
-Cocktail.create!(name: "Old Fashoned", description: cocktail_1_desc,
-                 image: cocktail_1_img)
+c = Cocktail.new(name: "Old Fashoned", description: cocktail_desc)
+c.remote_photo_url = url
+c.save!
 
 puts 'Seed Cocktails Done'
 
