@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   end
   resources :doses, only: [:destroy]
   resources :cards, only: [:index]
+
+  resources :ingredients, only: [:create, :new, :destroy]
 end
