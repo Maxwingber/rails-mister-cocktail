@@ -1,0 +1,35 @@
+
+<div class="container">
+  <h2> <%= @cocktail.name %></h2>
+
+  <div class="row row-center">
+
+    <div class="col-xs-12 col-sm-6 col-md-4 cards-center">
+      <!-- Print Cards -->
+      <%= render 'components/card', title: @cocktail.name, description: @cocktail.description,
+            image: @cocktail.image %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4 cards-center">
+      <!-- Print Ingredients -->
+      <div style="width: 100%;">
+        <% @cocktail.doses.each do |dose| %>
+          <div class="card-product">
+            <span>
+              <%= dose.description %>
+              <%= Ingredient.find(dose.ingredient_id).name %>
+            </span>
+            <%= link_to '✖️', dose_path(dose.id), method: :delete%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4 cards-center">
+      <div style="width: 100%;">
+        <!-- render form -->
+        <%=  render 'components/dose_form', cocktail: @cocktail, dose: @dose %>
+      </div>
+    </div>
+  </div>
+</div>

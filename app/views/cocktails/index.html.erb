@@ -1,0 +1,16 @@
+<!-- Here comes the banner -->
+<%= render 'components/banner' %>
+
+<div class="container">
+  <!-- Here comes the cards -->
+  <div class="row row-center">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 cards-center">
+        <%= link_to cocktail_path(cocktail) do %>
+            <%= render 'components/card', title: cocktail.name, description: cocktail.description,
+            image: cocktail.image %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
