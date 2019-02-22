@@ -8,8 +8,8 @@ puts 'Seed Ingredients'
 
 Ingredient.create!(name: "Whisky")
 Ingredient.create!(name: "Suger")
+Ingredient.create!(name: "Angostura Bitter")
 Ingredient.create!(name: "Orange")
-Ingredient.create!(name: "Angostura")
 Ingredient.create!(name: "Campari")
 Ingredient.create!(name: "Vermuth Red")
 Ingredient.create!(name: "Vodka")
@@ -25,7 +25,7 @@ finally a twist of citrus rind. It is traditionally served in a short, round, tu
 
 url = "https://duijuz32qudrm.cloudfront.net/None/None/OLD%20FASHIONED/recipeImage/Old-Fashioned-1024x683.jpg"
 
-c = Cocktail.new(name: "Old Fashoned", description: cocktail_desc)
+c = Cocktail.new(name: "Old Fashioned", description: cocktail_desc)
 c.remote_photo_url = url
 c.save!
 
@@ -34,7 +34,7 @@ puts 'Seed Cocktails Done'
 puts 'Seed Doses'
 
 Dose.create!(description: '2cl', cocktail: Cocktail.first, ingredient: Ingredient.first)
-Dose.create!(description: '6cl', cocktail: Cocktail.first, ingredient: Ingredient.second)
-Dose.create!(description: '3cl', cocktail: Cocktail.first, ingredient: Ingredient.third)
+Dose.create!(description: '1 cube', cocktail: Cocktail.first, ingredient: Ingredient.second)
+Dose.create!(description: '3 dashes', cocktail: Cocktail.first, ingredient: Ingredient.third)
 
 puts 'Seed Doses Done'

@@ -1,5 +1,6 @@
 .cards-center {
   margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,6 +16,7 @@
 }
 
 .card-img {
+  object-fit: cover;
   border-radius: 5px;
   width: 260px;
   height: 180px;
