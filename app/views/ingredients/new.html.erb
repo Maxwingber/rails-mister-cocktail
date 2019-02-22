@@ -1,4 +1,10 @@
 <div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2>Add a new Ingredient</h2>
+      <%= render 'components/ingredient_form', cocktail: @cocktail %>
+    </div>
+  </div>
   <div class="row row-center">
     <% @ingredients.each do |ingredient| %>
       <div class="card-product cards-center col-md-2" style="margin-left: 5px; margin-right: 5px; ">
@@ -6,11 +12,5 @@
         <%= link_to '✖️', ingredient_path(ingredient.id), method: :delete%>
       </div>
     <% end %>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h2>Add a new Ingredient</h2>
-      <%= render 'components/ingredient_form', cocktail: @cocktail %>
-    </div>
   </div>
 </div>
